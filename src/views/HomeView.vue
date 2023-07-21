@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <HomeHeader></HomeHeader>
+  <h2>Search All</h2>
+  <EpochButtons class="epoch-buttons" />
+  <PopularComposers></PopularComposers>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HomeHeader from "@/components/HomeHeader.vue";
+import PopularComposers from "@/components/PopularComposers.vue";
+import EpochButtons from "@/components/EpochButtons.vue";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    HomeHeader,
+    PopularComposers,
+    EpochButtons,
   },
 };
 </script>
+
+<style scoped>
+.epoch-buttons {
+  margin-top: 1rem;
+}
+</style>
