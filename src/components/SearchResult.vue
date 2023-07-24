@@ -1,24 +1,24 @@
 <template>
   <section>
     <h2 v-if="errorMsg">{{ errorMsg }}</h2>
-    <article
-      class="search-result card"
-      v-for="result in searchResult"
-      :key="result.work.id"
-    >
-      <div class="img-container">
-        <img
-          class="composer-img"
-          :src="result.composer.portrait"
-          :alt="result.composer.complete_name"
-        />
-      </div>
-      <div class="result-description">
-        <h2>{{ result.composer.complete_name }}</h2>
-        <p>{{ result.work.title }}</p>
-        <p>{{ result.work.genre }}</p>
-      </div>
-    </article>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Composer</th>
+          <th scope="col">Title</th>
+          <th scope="col">Genre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(result, index) in searchResult" :key="result.work.id">
+          <th scope="row">{{ index }}</th>
+          <td>{{ result.composer.complete_name }}</td>
+          <td>{{ result.work.title }}</td>
+          <td>{{ result.work.genre }}</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </template>
 
