@@ -1,6 +1,8 @@
 <template>
-  <HomeHeader />
-  <EpochDetails />
+  <section class="container">
+    <HomeHeader />
+    <EpochDetails />
+  </section>
 </template>
 
 <script>
@@ -15,3 +17,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.container > * + * {
+  margin-top: 2rem;
+}
+</style>

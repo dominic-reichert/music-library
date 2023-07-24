@@ -2,19 +2,21 @@
   <section>
     <h2 v-if="errorMsg">{{ errorMsg }}</h2>
     <article
-      class="search-result"
+      class="search-result card"
       v-for="result in searchResult"
       :key="result.work.id"
     >
-      <img
-        class="composer-img"
-        :src="result.composer.portrait"
-        :alt="result.composer.complete_name"
-      />
+      <div class="img-container">
+        <img
+          class="composer-img"
+          :src="result.composer.portrait"
+          :alt="result.composer.complete_name"
+        />
+      </div>
       <div class="result-description">
         <h2>{{ result.composer.complete_name }}</h2>
         <p>{{ result.work.title }}</p>
-        <p>SPOTIFY LINK</p>
+        <p>{{ result.work.genre }}</p>
       </div>
     </article>
   </section>
@@ -74,13 +76,14 @@ h2 {
 
 .search-result {
   display: flex;
+  flex-direction: row;
   gap: 0.5rem;
 
   margin-top: 1rem;
   padding: 0.5rem;
 
-  background-color: #101010;
-  border-radius: 5px;
+  background-color: #212529;
+  color: snow;
 }
 
 .composer-img {

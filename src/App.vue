@@ -10,13 +10,15 @@
 }
 
 body {
-  background-color: black;
+  background-color: black !important;
 
   font-family: "Gothic A1", sans-serif;
-  color: snow;
+  color: snow !important;
+
+  padding: 1rem;
 }
 
 p {
-  margin: 0;
+  margin: 0 !important;
 }
 </style>

@@ -1,20 +1,26 @@
 <template>
   <section>
     <h2>Epoch Details Page</h2>
-    <article
-      class="composers-list"
-      v-for="composer in epochComposers"
-      :key="composer.id"
-      @click="
-        $router.push({ name: 'composerWorks', params: { id: composer.id } })
-      "
-    >
-      <img class="composer-img" :src="composer.portrait" alt="composer.name" />
-      <div>
-        <h4>{{ composer.complete_name }}</h4>
-        <p>*{{ composer.birth }} - †{{ composer.death }}</p>
-      </div>
-    </article>
+    <div class="grid-container">
+      <article
+        class="composers-list"
+        v-for="composer in epochComposers"
+        :key="composer.id"
+        @click="
+          $router.push({ name: 'composerWorks', params: { id: composer.id } })
+        "
+      >
+        <img
+          class="composer-img"
+          :src="composer.portrait"
+          :alt="composer.name"
+        />
+        <div>
+          <h3>{{ composer.complete_name }}</h3>
+          <p>*{{ composer.birth }} - †{{ composer.death }}</p>
+        </div>
+      </article>
+    </div>
   </section>
 </template>
 
@@ -36,8 +42,9 @@ export default {
 </script>
 
 <style scoped>
-h4 {
+h3 {
   margin: 0;
+  font-size: 1.2rem;
 }
 
 p {
@@ -46,16 +53,21 @@ p {
   font-weight: 400;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
 .composers-list {
   display: flex;
   gap: 0.5rem;
 
-  margin-top: 1rem;
   padding: 0.5rem;
 
   font-weight: 600;
 
-  background-color: #101010;
+  background-color: #212529;
   border-radius: 5px;
 
   cursor: pointer;
@@ -66,5 +78,18 @@ p {
   border-radius: 5px;
 
   cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 </style>

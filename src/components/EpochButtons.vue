@@ -52,4 +52,10 @@ export default {
 
   cursor: pointer;
 }
+
+@media screen and (min-width: 1200px) {
+  .button-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 </style>

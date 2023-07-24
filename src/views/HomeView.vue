@@ -1,8 +1,9 @@
 <template>
-  <HomeHeader></HomeHeader>
-  <h2>Search All</h2>
-  <EpochButtons class="epoch-buttons" />
-  <PopularComposers></PopularComposers>
+  <section class="container">
+    <HomeHeader></HomeHeader>
+    <EpochButtons />
+    <PopularComposers />
+  </section>
 </template>
 
 <script>
@@ -22,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-.epoch-buttons {
-  margin-top: 1rem;
+.container > * + * {
+  margin-top: 2rem;
 }
 </style>

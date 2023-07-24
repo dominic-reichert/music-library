@@ -1,6 +1,8 @@
 <template>
-  <HomeHeader />
-  <SearchResult />
+  <section class="container">
+    <HomeHeader />
+    <SearchResult />
+  </section>
 </template>
 
 <script>
@@ -15,3 +17,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.container > * + * {
+  margin-top: 2rem;
+}
+</style>

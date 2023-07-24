@@ -1,11 +1,11 @@
 <template>
   <section>
     <h1>{{ composerData.complete_name }}</h1>
-    <article class="composer-info">
+    <article class="card composer-card">
       <img
         class="composer-img"
         :src="composerData.portrait"
-        alt="composer.name"
+        :alt="composerData.name"
       />
       <div>
         <p>*{{ composerData.birth }} - †{{ composerData.death }}</p>
@@ -14,11 +14,23 @@
     </article>
     <article>
       <h2>Works</h2>
-      <ul v-for="work in worksData" :key="work.id">
-        <li>
-          {{ work.title }} || <strong>{{ work.genre }}</strong>
-        </li>
-      </ul>
+
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Genre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(work, index) in worksData" :key="work.id">
+            <th scope="row">{{ index }}</th>
+            <td>{{ work.title }}</td>
+            <td>{{ work.genre }}</td>
+          </tr>
+        </tbody>
+      </table>
     </article>
   </section>
 </template>
@@ -43,9 +55,21 @@ export default {
 </script>
 
 <style scoped>
-.composer-info {
+article + article {
+  margin-top: 2rem;
+}
+.composer-card {
   display: flex;
+  flex-direction: row;
   gap: 0.5rem;
+
+  margin-top: 1rem;
+  padding: 0.5rem;
+
+  font-weight: 600;
+
+  background-color: #212529;
+  color: snow;
 }
 
 .composer-img {
