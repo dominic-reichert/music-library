@@ -12,7 +12,7 @@
       </thead>
       <tbody>
         <tr v-for="(result, index) in searchResult" :key="result.work.id">
-          <th scope="row">{{ index }}</th>
+          <th scope="row">{{ index + 1 }}</th>
           <td>{{ result.composer.complete_name }}</td>
           <td>{{ result.work.title }}</td>
           <td>{{ result.work.genre }}</td>

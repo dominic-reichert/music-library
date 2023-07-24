@@ -25,7 +25,7 @@
         </thead>
         <tbody>
           <tr v-for="(work, index) in worksData" :key="work.id">
-            <th scope="row">{{ index }}</th>
+            <th scope="row">{{ index + 1 }}</th>
             <td>{{ work.title }}</td>
             <td>{{ work.genre }}</td>
           </tr>
